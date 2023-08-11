@@ -1,4 +1,7 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { User } from 'src/user/user.entity';
+import { Dialogue } from 'src/dialogue/dialogue.entity';
+import { Message } from 'src/message/message.entity';
 
 const typeOrmConfig: TypeOrmModuleOptions = {
     type: 'mysql',
@@ -7,7 +10,7 @@ const typeOrmConfig: TypeOrmModuleOptions = {
     username: process.env.MYSQL_USER,
     password: process.env.MYSQL_USER_PASSWORD,
     database: process.env.MYSQL_DATABASE,
-    entities: [__dirname + '/**/*.entity{.ts,.js}'],
+    entities: [User, Dialogue, Message],
     synchronize: true,
 };
 
