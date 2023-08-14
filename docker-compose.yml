@@ -11,8 +11,8 @@ services:
       - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
   backend:
     build:
-      context: /backend
-      dockerfile: /backend/Dockerfile
+      context: .
+      dockerfile: ./backend/Dockerfile
     ports:
       - "3000:3000"
     volumes:
@@ -22,6 +22,6 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: frontend/Dockerfile
+      dockerfile: ./frontend/Dockerfile
     ports:
       - "80:80"
